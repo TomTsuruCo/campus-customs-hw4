@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Customs — App Check</title>
+    <style>
+      :root { color-scheme: light; --blue: #0f2d52; --ink: #1d2938; --muted: #586779; --paper: #f5f4ef; --line: #d7dce1; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 Arial, sans-serif; }
+      header { background: var(--blue); color: white; padding: 52px max(24px, calc((100vw - 1040px) / 2)); }
+      header p { margin: 8px 0 0; color: #d6e2f0; }
+      main { width: min(1040px, calc(100% - 40px)); margin: 36px auto 72px; }
+      section { margin: 0 0 36px; padding: 28px; border: 1px solid var(--line); background: white; }
+      h1, h2 { line-height: 1.2; }
+      h1 { margin: 0; font-size: clamp(32px, 6vw, 52px); }
+      h2 { margin: 0 0 14px; color: var(--blue); font-size: 25px; }
+      p { margin: 0 0 18px; }
+      figure { margin: 0; }
+      img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+      figcaption { padding-top: 12px; color: var(--muted); }
+      .tag { display: inline-block; margin-bottom: 12px; color: var(--muted); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+      footer { padding: 20px; color: var(--muted); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) { header { padding: 36px 22px; } main { width: calc(100% - 24px); margin-top: 18px; } section { padding: 18px; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="tag">HW4 · Problem 11 · Browser testing</span>
+      <h1>Campus Customs App Check</h1>
+      <p>Three checks captured from the running storefront and chatbot · October 5, 2026</p>
+    </header>
+    <main>
+      <section aria-labelledby="inventory-check">
+        <span class="tag">Check 1</span>
+        <h2 id="inventory-check">Chat checks live inventory and price</h2>
+        <p>On the Basic Hoodie Big Yale item page, I asked for its price and size M availability.</p>
+        <figure>
+          <img src="app_check_images/inventory.png" alt="Basic Hoodie Big Yale product page with the chat reply: $68, size M has 5 in stock." />
+          <figcaption>The agent replies with the database-backed price ($68) and stock count (5 in size M), matching the size-level inventory shown on the product page.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="search-check">
+        <span class="tag">Check 2</span>
+        <h2 id="search-check">Category question adds product cards to the page</h2>
+        <p>I asked, “What hoodies do you have?” in the floating chat.</p>
+        <figure>
+          <img src="app_check_images/chat_search.png" alt="Six hoodie product cards appear under Worth a closer look, alongside the chatbot's response." />
+          <figcaption>The agent returns six catalogue matches and the storefront renders them as image, name, description, and price cards. The cards link to the same product-detail pages as the regular catalogue.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="usability-check">
+        <span class="tag">Check 3 · Problem 9 usability feature</span>
+        <h2 id="usability-check">Quick filters, sorting, and stock badges</h2>
+        <p>The Products page is filtered to Hoodies and sorted by price from low to high.</p>
+        <figure>
+          <img src="app_check_images/usability.png" alt="Products page with Hoodies selected, price low to high sorting, and In Stock badges on product cards." />
+          <figcaption>The active category and sort order narrow the collection, while each visible card shows an at-a-glance stock badge to help shoppers decide what to open.</figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer>Campus Customs · App checks performed against the locally running React + FastAPI application.</footer>
+  </body>
+</html>

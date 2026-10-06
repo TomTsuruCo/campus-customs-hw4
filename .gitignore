@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local catalogue/database pack (never publish these files)
+/data/
+/data.zip
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+.venv/
+**/.venv/
+__pycache__/
+*.py[cod]
+
+# Node/Vite
+**/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+
+# Local logs and editor/OS files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
